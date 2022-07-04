@@ -44,7 +44,7 @@ class MyHomePage extends StatelessWidget {
                           color: Colors.cyan,
                           border: Border.all(color: Colors.white, width: 2)),
                       child: Text(
-                        i.amount.toString(),
+                        '\$ ${i.amount}',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.white),
                       ),
