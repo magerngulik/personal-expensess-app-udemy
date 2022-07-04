@@ -32,12 +32,23 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             Column(
-              children: transactions.map((tx) {
-                return Card(
-                  child: Text(tx.title),
-                );
-              }).toList(),
-            )
+                children: transactions.map((i) {
+              return Card(
+                child: Row(
+                  children: [
+                    Container(
+                      child: Text(i.amount.toString()),
+                    ),
+                    Column(
+                      children: [
+                        Text(i.title),
+                        Text(i.date.toString()),
+                      ],
+                    )
+                  ],
+                ),
+              );
+            }).toList())
           ],
         ));
   }
