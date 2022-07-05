@@ -2,16 +2,13 @@ import 'package:flutter/material.dart';
 import '../models/transaction.dart';
 import 'package:intl/intl.dart';
 
-class TranscationList extends StatefulWidget {
-  @override
-  State<TranscationList> createState() => _TranscationListState();
-}
-
-class _TranscationListState extends State<TranscationList> {
+class TranscationList extends StatelessWidget {
+  final List<Transcation> transaction;
+  TranscationList(this.transaction);
   @override
   Widget build(BuildContext context) {
     return Column(
-        children: _userTransaction.map((i) {
+        children: transaction.map((i) {
       return Card(
         child: Row(
           children: [

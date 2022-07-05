@@ -3,6 +3,7 @@ import 'package:personal_expenses_app/wigets/new_transactions.dart';
 import 'package:personal_expenses_app/wigets/transaction_list.dart';
 import 'models/transaction.dart';
 import 'package:intl/intl.dart';
+import './wigets/user_transaction.dart';
 
 void main() => runApp(MaterialApp(
       home: MyHomePage(),
@@ -30,8 +31,7 @@ class MyHomePage extends StatelessWidget {
                 elevation: 5,
               ),
             ),
-            NewTransaction(),
-            TranscationList()
+            UserTransaction()
           ],
         ));
   }
