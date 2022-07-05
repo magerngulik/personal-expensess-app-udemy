@@ -49,7 +49,10 @@ class MyHomePage extends StatelessWidget {
                         decoration: InputDecoration(label: Text('Amount'))),
                     FlatButton(
                         textColor: Colors.purple,
-                        onPressed: () {},
+                        onPressed: () {
+                          print(titleController.text);
+                          print(amountController.text);
+                        },
                         child: Text('Add The Transaction')),
                   ],
                 ),
