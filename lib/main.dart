@@ -14,6 +14,8 @@ class MyHomePage extends StatelessWidget {
     Transcation(
         id: 't2', title: 'Wekly Grosery', amount: 16.6, date: DateTime.now()),
   ];
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +42,10 @@ class MyHomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     TextField(
+                        controller: titleController,
                         decoration: InputDecoration(label: Text('Title'))),
                     TextField(
+                        controller: amountController,
                         decoration: InputDecoration(label: Text('Amount'))),
                     FlatButton(
                         textColor: Colors.purple,
