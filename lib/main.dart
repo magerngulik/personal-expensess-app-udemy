@@ -5,6 +5,7 @@ import 'models/transaction.dart';
 import 'package:intl/intl.dart';
 
 void main() => runApp(MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.red, accentColor: Colors.amber),
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
     ));
