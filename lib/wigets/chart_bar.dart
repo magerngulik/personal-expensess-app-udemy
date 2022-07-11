@@ -12,7 +12,7 @@ class ChartBar extends StatelessWidget {
     return Column(
       children: [
         FittedBox(
-          child: Text('\${$spendingAmount.toStringAsFixed(0)}'),
+          child: Text('\$${spendingAmount.toStringAsFixed(0)}'),
         ),
         SizedBox(
           height: 4,
@@ -35,7 +35,11 @@ class ChartBar extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10))),
             )
           ]),
-        )
+        ),
+        SizedBox(
+          height: 4,
+        ),
+        Text(title),
       ],
     );
   }
