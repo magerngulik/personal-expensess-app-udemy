@@ -41,7 +41,13 @@ class _MyHomePageState extends State<MyHomePage> {
     Transcation(
       id: 't1',
       title: 'New Shoes',
-      amount: 10,
+      amount: 0.05,
+      date: DateTime.now(),
+    ),
+    Transcation(
+      id: 't2',
+      title: 'New Chlote',
+      amount: 2,
       date: DateTime.now(),
     ),
   ];

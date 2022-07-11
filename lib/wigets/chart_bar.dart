@@ -39,7 +39,7 @@ class ChartBar extends StatelessWidget {
         SizedBox(
           height: 4,
         ),
-        Text(title),
+        Text(title[0].toUpperCase()),
       ],
     );
   }
