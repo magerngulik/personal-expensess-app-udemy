@@ -38,18 +38,18 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transcation> _userTransaction = [
-    Transcation(
-      id: 't1',
-      title: 'New Shoes',
-      amount: 0.05,
-      date: DateTime.now(),
-    ),
-    Transcation(
-      id: 't2',
-      title: 'New Chlote',
-      amount: 2,
-      date: DateTime.now(),
-    ),
+    // Transcation(
+    //   id: 't1',
+    //   title: 'New Shoes',
+    //   amount: 0.05,
+    //   date: DateTime.now(),
+    // ),
+    // Transcation(
+    //   id: 't2',
+    //   title: 'New Chlote',
+    //   amount: 2,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   List<Transcation> get _recentTransaction {
@@ -60,11 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
     }).toList();
   }
 
-  addNewTransaction(String title, double amount) {
+  addNewTransaction(String title, double amount, DateTime date) {
     final newTx = Transcation(
         amount: amount,
         title: title,
-        date: DateTime.now(),
+        date: date,
         id: DateTime.now().toString());
 
     setState(() {
@@ -72,6 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  //karna ingin menampilkan di modal
   void startAddNewTransaction(BuildContext ctx) {
     showModalBottomSheet(
         context: ctx,
