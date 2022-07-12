@@ -8,6 +8,7 @@ import 'package:intl/intl.dart';
 void main() => runApp(MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.red,
+        errorColor: Colors.red[200],
         accentColor: Colors.amber,
         fontFamily: 'Quicksans',
         textTheme: ThemeData.light().textTheme.copyWith(
@@ -72,6 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _delTransactions(String id) {
+    setState(() {
+      _userTransaction.removeWhere((tx) => tx.id == id);
+    });
+  }
+
   //karna ingin menampilkan di modal
   void startAddNewTransaction(BuildContext ctx) {
     showModalBottomSheet(
@@ -104,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Chart(_recentTransaction),
-            TranscationList(_userTransaction)
+            TranscationList(_userTransaction, _delTransactions),
           ],
         ),
       ),
