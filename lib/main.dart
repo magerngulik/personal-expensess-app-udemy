@@ -1,36 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:personal_expenses_app/wigets/chart.dart';
 import './wigets/new_transactions.dart';
 import './wigets/transaction_list.dart';
 import 'models/transaction.dart';
 import 'package:intl/intl.dart';
 
-void main() => runApp(MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        errorColor: Colors.red[200],
-        accentColor: Colors.amber,
-        fontFamily: 'Quicksans',
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
+  runApp(MaterialApp(
+    theme: ThemeData(
+      primarySwatch: Colors.red,
+      errorColor: Colors.red[200],
+      accentColor: Colors.amber,
+      fontFamily: 'Quicksans',
+      textTheme: ThemeData.light().textTheme.copyWith(
+            titleMedium: TextStyle(
+              fontFamily: 'OpenSans',
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+      appBarTheme: AppBarTheme(
         textTheme: ThemeData.light().textTheme.copyWith(
               titleMedium: TextStyle(
                 fontFamily: 'OpenSans',
-                fontWeight: FontWeight.bold,
                 fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
             ),
-        appBarTheme: AppBarTheme(
-          textTheme: ThemeData.light().textTheme.copyWith(
-                titleMedium: TextStyle(
-                  fontFamily: 'OpenSans',
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-        ),
       ),
-      home: MyHomePage(),
-      debugShowCheckedModeBanner: false,
-    ));
+    ),
+    home: MyHomePage(),
+    debugShowCheckedModeBanner: false,
+  ));
+}
 
 class MyHomePage extends StatefulWidget {
   @override
