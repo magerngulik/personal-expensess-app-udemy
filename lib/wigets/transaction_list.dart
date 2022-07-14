@@ -11,25 +11,27 @@ class TranscationList extends StatelessWidget {
     final curScalerFactor = MediaQuery.of(context).textScaleFactor;
 
     return transaction.isEmpty
-        ? Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'No Transaction added yet',
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              Container(
-                height: 200,
-                child: Image.asset(
-                  'assets/images/waiting.png',
-                  fit: BoxFit.cover,
+        ? LayoutBuilder(builder: (ctx, constraints) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'No Transaction added yet',
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
-              )
-            ],
-          )
+                SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  height: constraints.maxHeight * 0.6,
+                  child: Image.asset(
+                    'assets/images/waiting.png',
+                    fit: BoxFit.cover,
+                  ),
+                )
+              ],
+            );
+          })
         : ListView.builder(
             itemCount: transaction.length,
             itemBuilder: ((user, index) {
