@@ -46,18 +46,18 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transcation> _userTransaction = [
-    // Transcation(
-    //   id: 't1',
-    //   title: 'New Shoes',
-    //   amount: 0.05,
-    //   date: DateTime.now(),
-    // ),
-    // Transcation(
-    //   id: 't2',
-    //   title: 'New Chlote',
-    //   amount: 2,
-    //   date: DateTime.now(),
-    // ),
+    Transcation(
+      id: 't1',
+      title: 'New Shoes',
+      amount: 0.05,
+      date: DateTime.now(),
+    ),
+    Transcation(
+      id: 't2',
+      title: 'New Chlote',
+      amount: 2,
+      date: DateTime.now(),
+    ),
   ];
 
   bool _showChart = false;
